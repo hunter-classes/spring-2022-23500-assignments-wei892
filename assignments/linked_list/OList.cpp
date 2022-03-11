@@ -54,24 +54,11 @@ void OList::insert(int value)
     head = temp;
   }
   else{
-    temp ->setNext(walker);
+    temp->setNext(walker);
     trailer->setNext(temp);
   }
 
 }
-  
-/*
-void OList::insert(int value){
-  ONode *temp = new ONode(value);
-
-  //a walker to check if the number before it is bigger
-  //if smaller, insert value right after
-
-  //if larger, keep going untill we found the number smaller than value
-
-  ONode *walker = head;
-}
-*/
 
 std::string OList::toString(){
   std::string result = "";
@@ -82,5 +69,73 @@ std::string OList::toString(){
   }
 
   result = result + "null";
-  return result;
+  return result + "\n";
+}
+
+bool OList::contains(int value){
+  ONode *temp = new ONode(value);
+
+  ONode *walker = head;
+
+  while (walker != nullptr){
+    if (walker->getData() == temp->getData()){
+      return true;
+    }
+    walker = walker->getNext();
+  }
+  return false;
+}
+
+int OList::get(int loc){
+  ONode *temp = new ONode(loc);
+
+  ONode *walker = head;
+
+  while (walker !=nullptr and loc > 0){
+    walker = walker->getNext();
+    loc--;
+  }
+
+  if (loc >0){
+    throw std::out_of_range("Out of Range");
+  }
+  else {
+    return walker->getData();
+  }
+
+}
+
+
+void OList::remove(int loc){
+  ONode *walker = head;
+  ONode *trailer = nullptr;
+
+  while (walker != nullptr & loc >0){
+    trailer = walker;
+    walker= walker->getNext();
+    loc--;
+  }
+
+  if (trailer == nullptr){
+    head = walker->getNext();
+    delete walker;
+  }
+  else {
+    trailer->setNext(walker->getNext());
+    delete walker;
+  }
+}
+
+void OList::reverse()
+{
+   ONode *walker = head;
+   ONode *trailer=nullptr; // this one follows behind walker;
+    while(walker != nullptr)
+    {
+      ONode *walker2 = walker->getNext();
+      walker->setNext(trailer);
+      trailer=walker;
+      walker=walker2;
+    }
+    head = trailer;
 }

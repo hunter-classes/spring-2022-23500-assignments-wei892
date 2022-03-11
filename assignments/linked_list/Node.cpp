@@ -16,7 +16,7 @@ Node::Node(std::string data, Node *next){
   this->next = next;
 }
 
-void Node::setData(std::string data){
+void Node::setData(std::string  data){
   this->data = data;
 }
 

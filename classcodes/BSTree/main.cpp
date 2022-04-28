@@ -19,7 +19,7 @@ int main(){
   //======Video 4 activity=====//
   BSTree *t = new BSTree();
   t->setup();
-  std::cout << t->get_debugger_Rec();
+  std::cout << t->get_debugger_Rec() << std::endl;
 
   //std::cout << t->get_debug_string() << std::endl;
   return 0;

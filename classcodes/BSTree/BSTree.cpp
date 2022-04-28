@@ -20,12 +20,16 @@ std::string BSTree::get_debug_string(){
   }
 }
 
-std::string BSTree::traverse(Node *r){   
+std::string BSTree::traverse(Node *r){
+  std::string a,b,c;
   if (r == nullptr){
     return "";
   }
   else{
-    return std::to_string(r->getData()) + ", " + traverse(r->getLeft()) + ", " + traverse(r->getRight());
+    return traverse(r->getLeft()) + ", " + std::to_string(r->getData()) + ", " + traverse(r->getRight());
+    return a + ", " + b+ ", " + c;
+
+    
   }
 }
 

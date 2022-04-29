@@ -25,10 +25,9 @@ int Stack::pop(){
 
 int Stack::top(){
   if (stack < 0) throw STACK_ERR_EMPTY;
-  return stack->get(0);
+  return stack->get(size-1);
 }
 
 bool Stack::is_empty(){
-  std::cout.setf(std::ios::boolalpha);
   return size == 0;
 }

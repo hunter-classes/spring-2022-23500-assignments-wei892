@@ -27,6 +27,23 @@ int main(){
   std::cout << std::to_string(n) << std::endl;
   }  // need to use is empty, pop, top and push
   
+  //=====trying queue=====//
+  Queue *q = new Queue();
+  std::cout << "Is queue empty? " << q->is_empty() << std::endl;
   
+  int w = 6; 
+  while (w > 0){
+    q->enqueue(w);
+    w--;
+  }
+  std::cout << "Is queue full? " << q->is_full() << std::endl;
+
+  w = q->front();
+  std::cout << std::to_string(w) << std::endl;
+  w = q->sequeue();
+  std::cout << std::to_string(w) << std::endl;
+  w = q->sequeue();
+  std::cout << std::to_string(w) << std::endl;
+      
   return 0;
 }

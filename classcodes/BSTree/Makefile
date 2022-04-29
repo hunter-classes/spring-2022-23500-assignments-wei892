@@ -2,8 +2,9 @@ BJECTS=main.o BSTree.o Node.o
 LDFLAGS=
 CXXFLAGS=
 
-main: $(OBJECTS)
-	g++ -o main $(OBJECTS)
+main: main.o BSTree.o Node.o
+	g++ -o main main.o BSTree.o Node.o
+
 BSTree.o: BSTree.cpp Node.h BSTree.h
 
 main.o: main.cpp Node.h BSTree.h

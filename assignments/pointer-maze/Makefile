@@ -13,4 +13,4 @@ MazeGenerator.o: MazeGenerator.cpp MazeGenerator.h Labyrinth.h
 
 
 clean:
-	rm -f $(OBJECTS)
+	rm -f *.o *~

@@ -8,6 +8,7 @@ class Tree{
   std::string recursion(Node *r);
   int rsearch(int value, Node *p);
   void rinsert(int value, Node *p);
+  int treeSum(Node *n);
 public:
   Tree();
   void setup();
@@ -17,4 +18,5 @@ public:
   int rsearch(int value);
   void insert(int value);
   void rinsert(int value);
+  int treeSum();
 };

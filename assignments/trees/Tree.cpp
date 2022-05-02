@@ -116,3 +116,17 @@ void Tree::rinsert(int value){
   }
 }
 
+int Tree::treeSum(Node *n){
+  if (n = nullptr){
+    return 0;
+  }
+  else{
+    return n->getData() +
+      treeSum(n->getLeft()) +
+      treeSum(n->getRight());
+  }
+}
+
+int Tree::treeSum(){
+  return treeSum(root);
+}

@@ -23,5 +23,8 @@ int main(){
     std::cout << v << " not found\n";
     
   }
+
+  t->insert(10);
+  std::cout << t->printTree_Rec() << std::endl;
   return 0;
 }

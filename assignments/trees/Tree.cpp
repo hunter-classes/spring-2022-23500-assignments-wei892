@@ -85,21 +85,22 @@ void Tree::insert(int value){
     }
   }
 }
-/*
+
 void Tree::rinsert(int value, Node *p){
   if (p == nullptr){
     Node *newnode = new Node(value);
     p = newnode;
+    return;
   }
   //std::cout << //"checked if null";
   
   if (p->getData() < value){
     //std::cout << //"checked if right";
-    rinsert(value, p->getRight());
+    return rinsert(value, p->getRight());
   }
   else if (p->getData() > value){
     //std::cout << "checked if left";
-    rinsert(value, p->getLeft());
+    return rinsert(value, p->getLeft());
   }
 
   //nothing is done if they are equal;
@@ -114,4 +115,4 @@ void Tree::rinsert(int value){
     rinsert(value, root);
   }
 }
-*/
+

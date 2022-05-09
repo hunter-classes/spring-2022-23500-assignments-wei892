@@ -130,3 +130,128 @@ int Tree::treeSum(Node *n){
 int Tree::treeSum(){
   return treeSum(root);
 }
+
+
+
+int Tree::numChild(Node *r){
+  int count = 0;
+  if (r->getLeft() != nullptr){
+    count++;
+  }
+  if (r->getRight() != nullptr){
+    count++;
+  }
+  return count;
+}
+
+void Tree::deleteNode(int n){
+  //declare walker and trailer
+  Node *walker = root;
+  Node *trailer;
+  std::string walkerLoc = "";
+  Node *temp;
+  //search with walker
+  while (walker != nullptr){
+    if (walker->getData() == n){
+      break;
+    }
+    else if (walker->getData() < n){
+      trailer = walker;
+      walker = walker->getRight();
+      walkerLoc = "right";
+    }
+    else{
+      trailer = walker;
+      walker = walker->getLeft();
+      walkerLoc = "left";
+    }
+  }  
+  
+  //conditions
+  int children = numChild(walker);
+  
+  if (children == 0){
+    // walker has no children, is a leaf
+
+    //checking the location of walker
+    if (walkerLoc == "right"){
+      trailer->setRight(nullptr);
+    }
+    else {
+      trailer->setLeft(nullptr);
+    }
+
+    walker = nullptr;
+    delete walker;
+    return;
+  }
+
+  
+  else if (children == 1){
+    if (walker->getLeft() != nullptr){
+      //delete left side
+
+      //checking which side the walker is on in relation to trailer
+      if (walkerLoc == "left"){
+	trailer->setLeft(walker->getLeft()); 
+      }
+      else {
+	trailer->setRight(walker->getLeft());
+      }
+    }
+    else {
+        if (walkerLoc == "right"){
+	trailer->setRight(walker->getRight()); 
+      }
+      else {
+	trailer->setLeft(walker->getRight());
+      }
+    }
+
+    walker = nullptr;
+    delete walker;
+    return;
+  }  
+  else {
+    temp = walker->getLeft();
+    //find the next smallest value just before the node that is being deleted
+
+    while(temp->getRight() != nullptr){
+      temp = temp->getRight();   
+    }
+    
+    if (walkerLoc == "left"){
+      trailer->getLeft()->setData(temp->getData());
+      temp = nullptr;;
+      delete temp;
+    }
+    else {
+      trailer->getRight()->setData(temp->getData());
+      temp = nullptr;
+      delete temp;
+    }
+    
+    temp = nullptr;
+    delete temp;
+  }
+}
+
+void Tree::setup(){
+  Node *n = new Node (50);
+  root = n;
+  insert(25);
+  insert(75);
+  insert(13);
+  insert(37);
+  insert(63);
+  insert(87);
+  insert(7);
+  insert(19);
+  insert(31);
+  //insert(43);
+  insert(57);
+  insert(69);
+  insert(81);
+  insert(93);
+}
+

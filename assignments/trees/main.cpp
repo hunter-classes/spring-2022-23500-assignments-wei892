@@ -4,7 +4,8 @@
 #include <time.h>
 
 int main(){
-  srand(time(NULL));
+  /*
+  rand(time(NULL));
   Tree *t = new Tree();
   int counter = 10;
   while (counter > 0){
@@ -27,4 +28,15 @@ int main(){
   t->insert(10);
   std::cout << t->printTree_Rec() << std::endl;
   return 0;
+  */
+  Tree *t = new Tree();
+  t->setup();
+
+  std::cout << t->printTree_Rec() << std::endl;
+  t->deleteNode(19);
+  std::cout << t->printTree_Rec() << std::endl;
+  t->deleteNode(37);
+  std::cout << t->printTree_Rec() << std::endl;
+  t->deleteNode(75);
+  std::cout << t->printTree_Rec() << std::endl;
 }

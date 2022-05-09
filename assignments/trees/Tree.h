@@ -9,6 +9,7 @@ class Tree{
   int rsearch(int value, Node *p);
   void rinsert(int value, Node *p);
   int treeSum(Node *n);
+  int numChild(Node *r);
 public:
   Tree();
   void setup();
@@ -19,4 +20,5 @@ public:
   void insert(int value);
   void rinsert(int value);
   int treeSum();
+  void deleteNode(int n);
 };

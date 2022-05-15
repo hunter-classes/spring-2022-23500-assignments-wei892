@@ -33,10 +33,14 @@ int main(){
   t->setup();
 
   std::cout << t->printTree_Rec() << std::endl;
+  std::cout << t->countLeaves() << std::endl;
   t->deleteNode(19);
   std::cout << t->printTree_Rec() << std::endl;
+  std::cout << t->countLeaves() << std::endl;
   t->deleteNode(37);
   std::cout << t->printTree_Rec() << std::endl;
+  std::cout << t->countLeaves() << std::endl;
   t->deleteNode(75);
   std::cout << t->printTree_Rec() << std::endl;
+  std::cout << t->countLeaves() << std::endl;
 }

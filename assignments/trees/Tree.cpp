@@ -238,32 +238,7 @@ void Tree::deleteNode(int n){
     
     temp = nullptr;
     delete temp;
-    }
-  /*
-  if(children == 2)
-  {
-    Node *temp = p;
-    temp=temp->getRight();
-    while(temp->getLeft()!=nullptr){
-    temp=temp->getLeft();
-    }
-
-    if(p->getData() > trailer->getData())
-    {
-        int val = temp->getData();
-        deleteNum(temp->getData());
-        p->setData(val);
-    }
-    else{
-        int val = temp->getData();
-        deleteNum(temp->getData());
-        p->setData(val);
-     }
-    temp = nullptr;
-    delete temp;
-    return;
-    }*/
-  
+    }  
 }
 
 void Tree::setup(){
@@ -285,3 +260,30 @@ void Tree::setup(){
   insert(93);
 }
 
+
+int Tree::countLeaves(Node *r){
+  if (r == nullptr){
+    return 0;
+  }
+  else if (isLeaf(r) == true){
+    return 1;
+  }
+  else {
+    return countLeaves(r->getLeft()) + countLeaves(r->getRight());
+  }
+}
+
+int Tree::countLeaves(){
+  return countLeaves(root);
+}
+
+
+//check if leaf
+
+bool Tree::isLeaf(Node *r){
+  int n = numChild(r);
+  if (n==0)
+    return true;
+  else
+    return false;
+}

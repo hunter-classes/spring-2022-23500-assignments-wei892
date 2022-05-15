@@ -10,6 +10,8 @@ class Tree{
   void rinsert(int value, Node *p);
   int treeSum(Node *n);
   int numChild(Node *r);
+  int countLeaves(Node *r);
+  bool isLeaf(Node *r);
 public:
   Tree();
   void setup();
@@ -21,4 +23,6 @@ public:
   void rinsert(int value);
   int treeSum();
   void deleteNode(int n);
+  int countLeaves();
+  
 };

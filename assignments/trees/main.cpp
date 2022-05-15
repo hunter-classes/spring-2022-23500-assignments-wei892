@@ -43,4 +43,6 @@ int main(){
   t->deleteNode(75);
   std::cout << t->printTree_Rec() << std::endl;
   std::cout << t->countLeaves() << std::endl;
+
+  std::cout << t->findHeight() << std::endl;
 }

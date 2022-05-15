@@ -258,6 +258,7 @@ void Tree::setup(){
   insert(69);
   insert(81);
   insert(93);
+  insert(2);
 }
 
 
@@ -286,4 +287,27 @@ bool Tree::isLeaf(Node *r){
     return true;
   else
     return false;
+}
+
+int Tree::findHeight(Node *r){
+  if (r == nullptr){
+    return 0;
+  }
+  else if (numChild(r) == 0){
+    return 1;
+  }
+  else {
+    int heightLeft = findHeight(r->getLeft());
+    int heightRight = findHeight(r->getRight());
+    if (heightLeft > heightRight) {
+      return findHeight(r->getLeft()) + 1;
+    }
+    else {
+      return findHeight(r->getRight()) + 1;
+    }
+  }
+}
+
+int Tree::findHeight(){
+  return findHeight(root);
 }

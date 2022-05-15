@@ -13,6 +13,7 @@ class Tree{
   int countLeaves(Node *r);
   bool isLeaf(Node *r);
   int findHeight(Node *r);
+  int sum( Node *r, int level);
 public:
   Tree();
   void setup();
@@ -26,5 +27,6 @@ public:
   void deleteNode(int n);
   int countLeaves();
   int findHeight();
+  int sum(int level);
   
 };

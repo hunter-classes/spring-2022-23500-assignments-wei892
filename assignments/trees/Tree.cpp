@@ -311,3 +311,20 @@ int Tree::findHeight(Node *r){
 int Tree::findHeight(){
   return findHeight(root);
 }
+
+int Tree::sum(Node *r, int level){
+  //root level is 0
+  if (r == nullptr){
+    return 0;
+  }
+  else if (level == 0){
+    return r->getData();
+  }
+  else {
+    return sum(r->getLeft(), level-1) + sum(r->getRight(), level-1);
+  }
+}
+
+int Tree::sum(int level){
+  return sum(root, level);
+}

@@ -45,4 +45,7 @@ int main(){
   std::cout << t->countLeaves() << std::endl;
 
   std::cout << t->findHeight() << std::endl;
+  std::cout << t->sum(0) << std::endl;
+  std::cout << t->sum(1) << std::endl;
+  std::cout << t->sum(2) << std::endl;
 }

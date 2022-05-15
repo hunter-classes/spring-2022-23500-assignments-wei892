@@ -211,7 +211,7 @@ void Tree::deleteNode(int n){
     walker = nullptr;
     delete walker;
     return;
-  }  
+  }
   else {
     temp = walker->getLeft();
     //find the next smallest value just before the node that is being deleted
@@ -221,19 +221,49 @@ void Tree::deleteNode(int n){
     }
     
     if (walkerLoc == "left"){
-      trailer->getLeft()->setData(temp->getData());
-      temp = nullptr;;
-      delete temp;
+      int val = temp->getData();
+      deleteNode(temp->getData());
+      //trailer->getLeft()->setData(temp->getData());
+      walker->setData(val);
     }
     else {
+      /*
       trailer->getRight()->setData(temp->getData());
       temp = nullptr;
-      delete temp;
+      delete temp;*/
+      int val = temp->getData();
+      deleteNode(temp->getData());
+      walker->setData(val);
     }
     
     temp = nullptr;
     delete temp;
-  }
+    }
+  /*
+  if(children == 2)
+  {
+    Node *temp = p;
+    temp=temp->getRight();
+    while(temp->getLeft()!=nullptr){
+    temp=temp->getLeft();
+    }
+
+    if(p->getData() > trailer->getData())
+    {
+        int val = temp->getData();
+        deleteNum(temp->getData());
+        p->setData(val);
+    }
+    else{
+        int val = temp->getData();
+        deleteNum(temp->getData());
+        p->setData(val);
+     }
+    temp = nullptr;
+    delete temp;
+    return;
+    }*/
+  
 }
 
 void Tree::setup(){

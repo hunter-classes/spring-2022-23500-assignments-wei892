@@ -33,19 +33,19 @@ int main(){
   t->setup();
 
   std::cout << t->printTree_Rec() << std::endl;
-  std::cout << t->countLeaves() << std::endl;
+  std::cout << "Counting Leaves in Tree t: " << t->countLeaves() << std::endl;
   t->deleteNode(19);
   std::cout << t->printTree_Rec() << std::endl;
-  std::cout << t->countLeaves() << std::endl;
+  std::cout << "Counting Leaves in Tree t: " << t->countLeaves() << std::endl;
   t->deleteNode(37);
   std::cout << t->printTree_Rec() << std::endl;
-  std::cout << t->countLeaves() << std::endl;
+  std::cout << "Counting Leaves in Tree t: " << t->countLeaves() << std::endl;
   t->deleteNode(75);
   std::cout << t->printTree_Rec() << std::endl;
-  std::cout << t->countLeaves() << std::endl;
+  std::cout << "Counting Leaves in Tree t: " << t->countLeaves() << std::endl;
 
-  std::cout << t->findHeight() << std::endl;
-  std::cout << t->sum(0) << std::endl;
-  std::cout << t->sum(1) << std::endl;
-  std::cout << t->sum(2) << std::endl;
+  std::cout << "Finding height of Tree t: " << t->findHeight() << std::endl;
+  std::cout << "Finding sum of level 0: " << t->sum(0) << std::endl;
+  std::cout << "Finding sum of level 1: " << t->sum(1) << std::endl;
+  std::cout << "Finding sum of level 2: " << t->sum(2) << std::endl;
 }

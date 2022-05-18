@@ -6,7 +6,7 @@ int main(){
   int size = sizeof(arr)/sizeof(arr[0]);
   printHeap(arr, size);
   //std::cout << std::to_string(size);
-  heapsort(arr, size);
+  heapSort(arr, size);
   printHeap(arr, size);
   return 0;
 }

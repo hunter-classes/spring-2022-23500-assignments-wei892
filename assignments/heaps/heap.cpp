@@ -51,7 +51,7 @@ void printHeap(int arr[], int size){
 } 
 
 
-void heapsort(int arr[], int size){
+void heapSort(int arr[], int size){
   buildHeap(arr, size);
 
   for (int i = 1; i < size; i++){
@@ -62,4 +62,9 @@ void heapsort(int arr[], int size){
     heapify(arr, size-i, 0);
   }
 }
-
+/*
+void heapSort(int arr[]){
+  int size = sizeof(arr)/sizeof(arr[0]);
+  heapsort(arr, size);
+}
+*/

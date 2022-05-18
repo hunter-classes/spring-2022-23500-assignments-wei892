@@ -3,7 +3,7 @@
 void heapify(int arr[], int size, int index);
 void buildHeap(int arr[], int size);
 void printHeap(int arr[], int size);
-void heapsort(int arr[], int size);
+void heapSort(int arr[], int size);
 //void heapsort(int arr[], int size)
 
 //a container for objects that have keys

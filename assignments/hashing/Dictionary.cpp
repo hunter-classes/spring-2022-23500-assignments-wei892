@@ -54,7 +54,7 @@ std::string Dictionary::getAllKeys(){
   //prints the name of all the people in the dictionary
   std::string allKeys = "";
   for (int i = 0; i<10; i++){
-    allKeys += arr[i]->toString() + "\n";
+    allKeys +=  "-> " + arr[i]->toString();
   }
   return allKeys;
 }

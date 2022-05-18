@@ -122,11 +122,11 @@ std::string List::toString(){
   std::string result = "";
   Node *walker = this->head;
   while (walker != nullptr){
-    result = result + walker->getPerson()->get_name() + "->";
+    result = result + walker->getPerson()->get_name() + " -> ";
     walker = walker->getNext();
   }
 
-  result = result + "null";
+  result = result;
   return result + "\n";
 }
 

@@ -1,5 +1,4 @@
 #pragma once
-
 #include "Node.h"
 
 class List{
@@ -16,7 +15,7 @@ class List{
 
   bool contains(Person *p);
   void remove(int loc);
-  Person get(int loc);
+  Person* get(std::string name);
   int length();
   std::string toString(); 
   

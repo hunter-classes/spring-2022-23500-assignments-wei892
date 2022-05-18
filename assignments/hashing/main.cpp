@@ -25,7 +25,7 @@ int main(){
 
   
   std::cout << "Retrieving person: c3" << std::endl;
-  std::cout << celebrities->retrievePerson(c3)->get_name() << std::endl;
+  std::cout << celebrities->retrievePerson(c2)->get_name() << std::endl;
   
   std::cout << "Retrieving person: c5" << std::endl;
   std::cout << celebrities->retrievePerson(c5)->get_name() << std::endl;

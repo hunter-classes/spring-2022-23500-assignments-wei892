@@ -11,7 +11,7 @@ class Dictionary{
 
   int hashKey(Person *p);
   void insertPerson(Person *p);
-  Person* retrievePerson(Person *p);
+  Person*  retrievePerson(Person *p);
   std::string getAllKeys();
   
 };

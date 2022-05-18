@@ -37,7 +37,7 @@ void Dictionary::insertPerson(Person *p){
   arr[key]->insert(p);
 }
 
-Person* Dictionary::retrievePerson(Person *p){
+Person*  Dictionary::retrievePerson(Person *p){
   //return null if not in the dictionary
   //use the hashkey to traverse through
 
